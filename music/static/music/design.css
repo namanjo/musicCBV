@@ -1,0 +1,11 @@
+
+body {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.shift {
+    margin: 5px 20px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% extends 'music/base.html' %}
+</head>
+
+<body>
+
+{% block body %}
+
+
+    <h3 id="nj">The Best Album Archive</h3>
+    <ul id="mylist">
+        {% for album in object_list %}
+        <li><a href="{% url 'music:myalbum' album.id %}">{{ album.album_title }}</a></li>
+            <form action="{% url 'music:album-delete' album.id%}" method="post" style="display:inline ">
+            {% csrf_token %}
+                <button type="submit" class="btn btn-dark btn-sm">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </form>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
+
+</body>
+</html>

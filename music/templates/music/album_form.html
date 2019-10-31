@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    {% extends 'music/base.html' %}
+    {% block title %}Album Details{% endblock %}
+
+</head>
+<body>
+{% block body %}
+<div class="container-fluid">
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'music/form-template.html' %}
+        <div class="form-group">                                                    <!--Bro check the diffrence between extends & include -->
+            <div class="col-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+</body>
+</html>
